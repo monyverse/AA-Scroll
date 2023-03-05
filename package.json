@@ -1,0 +1,19 @@
+{
+  "name": "scroll-relayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend.js"
+  },
+  "keywords": [],
+  "author": "Filosofía Código",
+  "license": "MIT",
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.4.7",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0"
+  }
+}

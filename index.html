@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div>
+    <input id="connect_button" type="button" value="Connect" onclick="connectWallet()" style="display: none"></input>
+    <p id="account_address" style="display: none"></p>
+    <h1>Greeter Verifier</h1>
+    <p id="web3_message"></p>
+    <p id="contract_state"></p>
+    <h3>Sign Greeting</h3>
+    <span>Greeting Text</span><br>
+    <input type="text" id="_greetingText"></input><br>
+    <span>Greeting Deadline</span><br>
+    <input type="text" id="_greetingDeadline"></input><br>
+    <button type="button" id="sign" onclick="_signMessage()">Sign</button>
+    <p id="hashed_message"></p>
+    <p id="signature"></p>
+    <h3>Verifiy Greeting</h4>
+    <span>Greeting Text</span><br>
+    <input type="text" id="_greetingTextRelay"></input><br>
+    <span>Greeting Deadline</span><br>
+    <input type="text" id="_greetingDeadlineRelay"></input><br>
+    <span>Greeting Setter</span><br>
+    <input type="text" id="_greetingSenderRelay"></input><br>
+    <span>Signature</span><br>
+    <input type="text" id="_signatureRelay"></input><br>
+    <button type="button" id="relay" onclick="_relayGreeting()">Relay</button>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js"></script>
+  <script type="text/javascript" src="blockchain_stuff.js"></script>
+</body>
+
+  <script>
+    function _signMessage()
+    {
+      _greetingText = document.getElementById("_greetingText").value
+      _greetingDeadline = document.getElementById("_greetingDeadline").value
+      signMessage(_greetingText, _greetingDeadline)
+    }
+
+    function _relayGreeting()
+    {
+      _greetingTextRelay = document.getElementById("_greetingTextRelay").value
+      _greetingDeadlineRelay = document.getElementById("_greetingDeadlineRelay").value
+      _greetingSenderRelay = document.getElementById("_greetingSenderRelay").value
+      _signatureRelay = document.getElementById("_signatureRelay").value
+      relayGreeting(_greetingTextRelay, _greetingDeadlineRelay, _greetingSenderRelay, _signatureRelay)
+    }
+  </script>
+</html>
